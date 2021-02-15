@@ -20,9 +20,9 @@ if os.environ['KERAS_BACKEND'] == 'tensorflow':
     from tensorflow.keras.layers import Input, Dense, LSTM, Conv2D, \
         BatchNormalization, Dropout, MaxPooling2D, Flatten
     from tensorflow.keras.optimizers import SGD
-    from tensorflow.keras.backend import set_session
+    from tensorflow.python.keras.backend import set_session
     import tensorflow as tf
-    graph = tf.get_default_graph()
+    graph = tf.compat.v1.get_default_graph()
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.compat.v1.Session(config=config)
